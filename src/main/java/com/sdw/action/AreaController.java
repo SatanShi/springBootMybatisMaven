@@ -1,6 +1,7 @@
 package com.sdw.action;
 import com.sdw.aspect.HttpAspect;
 import com.sdw.dao.model.Code;
+import com.sdw.dao.model.CodeExample;
 import com.sdw.entity.Area;
 import com.sdw.service.AreaService;
 import com.sdw.service.CodeService;
@@ -34,5 +35,12 @@ public class AreaController {
     public Code getCode(){
         return codeService.selectByPrimaryKey(132970);
     }
-
+    @RequestMapping(value = {"/getCodeList"},method = RequestMethod.GET)
+    public List<Code> getCodeList(){
+        CodeExample codeExample =new CodeExample();
+        codeExample.setOrderByClause("code desc");
+      //  codeExample.createCriteria().andCodeEqualTo(132970);
+        List<Code> list = codeService.selectByExample(codeExample);
+        return list;
+    }
 }
