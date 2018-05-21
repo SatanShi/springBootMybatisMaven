@@ -1,7 +1,8 @@
 package com.sdw.action;
 import com.sdw.aspect.HttpAspect;
-import com.sdw.model.BoyModel;
-import com.sdw.model.Result;
+import com.sdw.dao.model.BoyModel;
+import com.sdw.dao.model.Result;
+import com.sdw.properties.BoyProperties;
 import com.sdw.service.HelloService;
 import com.sdw.utils.ResultUtil;
 import org.slf4j.Logger;

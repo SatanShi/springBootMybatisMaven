@@ -3,7 +3,7 @@ package com.sdw.exceptionHand;/**
  */
 
 import com.sdw.exception.GirlExpection;
-import com.sdw.model.Result;
+import com.sdw.dao.model.Result;
 import com.sdw.utils.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

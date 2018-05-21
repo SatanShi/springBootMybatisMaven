@@ -1,4 +1,4 @@
-package com.sdw.action;
+package com.sdw.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

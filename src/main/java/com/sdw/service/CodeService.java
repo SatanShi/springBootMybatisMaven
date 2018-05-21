@@ -14,8 +14,8 @@ import com.sdw.daoEx.CodeMapperEx;
 public class CodeService {
 	@Autowired
 	private CodeMapper codeMapper;
-	@Autowired
-	private CodeMapperEx codeMapperEx;
+	/*@Autowired
+	private CodeMapperEx codeMapperEx;*/
 
 	public int countByExample(CodeExample example) {
 		return this.codeMapper.countByExample(example);

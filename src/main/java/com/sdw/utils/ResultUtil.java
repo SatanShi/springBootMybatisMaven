@@ -2,7 +2,7 @@ package com.sdw.utils;/**
  * Created by Administrator on 2018/5/14.
  */
 
-import com.sdw.model.Result;
+import com.sdw.dao.model.Result;
 
 /**
  * @author SHIDIWEN

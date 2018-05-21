@@ -1,4 +1,4 @@
-package com.sdw.model;/**
+package com.sdw.dao.model;/**
  * Created by Administrator on 2018/5/14.
  */
 
