@@ -2,9 +2,12 @@ package com.sdw.action;
 import com.sdw.aspect.HttpAspect;
 import com.sdw.dao.model.Code;
 import com.sdw.dao.model.CodeExample;
+import com.sdw.dao.model.Test;
+import com.sdw.dao.model.TestExample;
 import com.sdw.entity.Area;
 import com.sdw.service.AreaService;
 import com.sdw.service.CodeService;
+import com.sdw.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,8 @@ public class AreaController {
     private AreaService areaService;
     @Autowired
     private CodeService codeService;
+    @Autowired
+    private TestService testService;
 
     @RequestMapping(value = {"/list"},method = RequestMethod.GET)
     public List<Area> queryArea(){
@@ -39,8 +44,20 @@ public class AreaController {
     public List<Code> getCodeList(){
         CodeExample codeExample =new CodeExample();
         codeExample.setOrderByClause("code desc");
-      //  codeExample.createCriteria().andCodeEqualTo(132970);
+        //  codeExample.createCriteria().andCodeEqualTo(132970);
         List<Code> list = codeService.selectByExample(codeExample);
         return list;
+    }
+    @RequestMapping(value = {"/getTestList"},method = RequestMethod.GET)
+    public List<Test> getTestList(){
+        TestExample testExample =new TestExample();
+        List<Test> list =testService.selectByExample(testExample);
+        return list;
+    }
+
+    @RequestMapping(value = {"/getTest"},method = RequestMethod.GET)
+    public Test getTest(){
+       Test test=testService.selectByPrimaryKey(1);
+        return test;
     }
 }
