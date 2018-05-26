@@ -1,13 +1,12 @@
 package com.sdw.action;
 import com.sdw.aspect.HttpAspect;
-import com.sdw.dao.model.Code;
-import com.sdw.dao.model.CodeExample;
-import com.sdw.dao.model.Test;
-import com.sdw.dao.model.TestExample;
+import com.sdw.dao.model.*;
+import com.sdw.daoEx.model.TestEx;
 import com.sdw.entity.Area;
 import com.sdw.service.AreaService;
 import com.sdw.service.CodeService;
 import com.sdw.service.TestService;
+import com.sdw.utils.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,9 +54,14 @@ public class AreaController {
         return list;
     }
 
+    /**
+     * 返回带code  msg 和data的json字符串
+     * @return
+     */
     @RequestMapping(value = {"/getTest"},method = RequestMethod.GET)
-    public Test getTest(){
+    public Result getTest(){
        Test test=testService.selectByPrimaryKey(1);
-        return test;
+        return   ResultUtil.success(test);
     }
+
 }
