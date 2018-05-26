@@ -13,5 +13,5 @@ jdbc.username: root
 jdbc.password: root
 jdbc.driver: com.mysql.jdbc.Driver
 mybatis_config_file: mybaits-config.xml
-mapper_path: /daoMapper/**.xml
+mapper_path: /com/sdw/**/mapper/*.xml
 entity_package: com.sdw.entity
