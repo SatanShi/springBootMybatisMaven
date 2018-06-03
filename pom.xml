@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sdw</groupId>
-	<artifactId>girl</artifactId>
+	<artifactId>srmm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>girl</name>
+	<name>srmm</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -81,6 +81,21 @@
 			<artifactId>druid</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+        <!--引入 thymeleaf 模板依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+		<!--引入redis依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -98,12 +113,15 @@
 				</excludes>-->
 			</resource>
 			<resource>
-				<!--设置主资源目录-->
+				<!--设置主资源目录 include的文件不会被拦截访问-->
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<includes>
 					<include>**/*.yml</include>
 					<include>**/*.xml</include>
+					<include>**/*.html</include>
+					<include>**/*.js</include>
+					<include>**/*.css</include>
 				</includes>
 				<!--<excludes>
 					<exclude></exclude>
